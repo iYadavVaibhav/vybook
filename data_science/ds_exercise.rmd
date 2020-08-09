@@ -1,0 +1,130 @@
+# Exercises on data science
+
+Showing python plots.
+
+## Plotly
+
+
+```{python plotly-sankey, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
+
+import pandas as pd
+
+import plotly.offline as py
+
+df = pd.read_csv('https://storage.googleapis.com/kagglesdsdata/datasets%2F792338%2F1360531%2Fmerchant_txns_dummy.csv?GoogleAccessId=gcp-kaggle-com@kaggle-161607.iam.gserviceaccount.com&Expires=1597245897&Signature=dmZ2o1Cpzcx9DRyG3kB4ancveOjtKBeQ0JstJpRRMJYpmjXgvTlNcm9YhLCRE31LULjFV2Ex8JzN%2BRUgpkpbNFI8e3QWvaWzCNxi9ODhjkk0q2ifZjC320oipEV9VSIvRmLirfkdrNC5SGS0T4K5rcKP%2Bu1qMOh33Jwf1CcbV17x%2B0N2EE7h1aRcflYQEDhlp8GWhwGSkcUcEAsr0nLL%2Fbhbr3hXJWqMemGtvpkmqxfrualNB%2Fpd95RmxbAVebmIOni8lXlfYYIv4Sawpdf9CEgwW1jrPuhKJJcrLPgFdjQqlHXmGUBrwSlLjBnbzzxdnN3byzerXy4pc6ZNm646Cg%3D%3D')
+df.head()
+
+# Helper function to transform regular data to sankey format
+# Returns data and layout as dictionary
+def genSankey(df,cat_cols=[],value_cols='',title='Sankey Diagram'):
+    # maximum of 6 value cols -> 6 colors
+    colorPalette = ['#4B8BBE','#306998','#FFE873','#FFD43B','#646464']
+    labelList = []
+    colorNumList = []
+    for catCol in cat_cols:
+        labelListTemp =  list(set(df[catCol].values))
+        colorNumList.append(len(labelListTemp))
+        labelList = labelList + labelListTemp
+        
+    # remove duplicates from labelList
+    labelList = list(dict.fromkeys(labelList))
+    
+    # define colors based on number of levels
+    colorList = []
+    for idx, colorNum in enumerate(colorNumList):
+        colorList = colorList + [colorPalette[idx]]*colorNum
+        
+    # transform df into a source-target pair
+    for i in range(len(cat_cols)-1):
+        if i==0:
+            sourceTargetDf = df[[cat_cols[i],cat_cols[i+1],value_cols]]
+            sourceTargetDf.columns = ['source','target','count']
+        else:
+            tempDf = df[[cat_cols[i],cat_cols[i+1],value_cols]]
+            tempDf.columns = ['source','target','count']
+            sourceTargetDf = pd.concat([sourceTargetDf,tempDf])
+        sourceTargetDf = sourceTargetDf.groupby(['source','target']).agg({'count':'sum'}).reset_index()
+        
+    # add index for source-target pair
+    sourceTargetDf['sourceID'] = sourceTargetDf['source'].apply(lambda x: labelList.index(x))
+    sourceTargetDf['targetID'] = sourceTargetDf['target'].apply(lambda x: labelList.index(x))
+    
+    # creating the sankey diagram
+    data = dict(
+        type='sankey',
+        node = dict(
+          pad = 15,
+          thickness = 20,
+          line = dict(
+            color = "black",
+            width = 0.5
+          ),
+          label = labelList,
+          color = colorList
+        ),
+        link = dict(
+          source = sourceTargetDf['sourceID'],
+          target = sourceTargetDf['targetID'],
+          value = sourceTargetDf['count']
+        )
+      )
+    
+    layout =  dict(
+        title = title,
+        font = dict(
+          size = 10
+        )
+    )
+       
+    fig = dict(data=[data], layout=layout)
+    return fig
+
+# Generating DFs for different filter options
+italy = genSankey(df[df['Country']=='Italy'],cat_cols=['Country','Channel','Security'],value_cols='Declines',title='Merchant Transactions')
+spain = genSankey(df[df['Country']=='Spain'],cat_cols=['Country','Channel','Security'],value_cols='Declines',title='Merchant Transactions')
+all = genSankey(df,cat_cols=['Country','Channel','Security'],value_cols='Declines',title='Merchant Transactions')
+
+# Constructing menus
+updatemenus = [{'buttons': [{'method': 'animate',
+                             'label': 'All',
+                             'args': [all]
+                              },
+                            {'method': 'animate',
+                             'label': 'Italy',
+                             'args': [italy]
+                             },
+                            {'method': 'animate',
+                             'label': 'Spain',
+                             'args': [spain]
+                             }
+                            ] } ]
+
+# update layout with buttons, and show the figure
+sank = genSankey(df,cat_cols=['Country','Channel','Security'],value_cols='Declines',title='Merchant Transactions')
+fig = go.Figure(sank)
+fig.update_layout(updatemenus=updatemenus)
+
+py.plot(fig, filename="data_science/plotly-sankey.html", auto_open=False)
+
+```
+
+```{r, echo=FALSE}
+htmltools::includeHTML("data_science/plotly-sankey.html")
+```
+
+## Seaborn
+
+```{python simple-graph-example, message=FALSE, warning=FALSE, echo=TRUE, results='hide'}
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set(style="ticks")
+
+# Load the example dataset for Anscombe's quartet
+df = sns.load_dataset("anscombe")
+
+# Show the results of a linear regression within each dataset
+sns.lmplot(x="x", y="y", col="dataset", hue="dataset", data=df,
+           col_wrap=2, ci=None, palette="muted", height=4,
+           scatter_kws={"s": 50, "alpha": 1})
+plt.show()
+```

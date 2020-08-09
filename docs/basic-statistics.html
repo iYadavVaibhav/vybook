@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Basic Statistics | The VY notebook</title>
+  <meta name="description" content="This book has notes and understandings of articles and lectures taken by Vaibhav Yadav. These articles/chapters can be hard to understand as they are not written for explaining any topic but are for dumping the notes to refer back. if you have any suggestions, please email author at iYadavVaibhav [at] gmail [dot] com." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Basic Statistics | The VY notebook" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book has notes and understandings of articles and lectures taken by Vaibhav Yadav. These articles/chapters can be hard to understand as they are not written for explaining any topic but are for dumping the notes to refer back. if you have any suggestions, please email author at iYadavVaibhav [at] gmail [dot] com." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Basic Statistics | The VY notebook" />
+  
+  <meta name="twitter:description" content="This book has notes and understandings of articles and lectures taken by Vaibhav Yadav. These articles/chapters can be hard to understand as they are not written for explaining any topic but are for dumping the notes to refer back. if you have any suggestions, please email author at iYadavVaibhav [at] gmail [dot] com." />
+  
+
+<meta name="author" content="Vaibhav Yadav" />
+
+
+<meta name="date" content="2020-08-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="probability.html"/>
+<link rel="next" href="advance-statistics.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The VY Notebook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Data Science</b></span></li>
+<li class="chapter" data-level="1" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>1</b> Probability</a><ul>
+<li class="chapter" data-level="1.1" data-path="probability.html"><a href="probability.html#events"><i class="fa fa-check"></i><b>1.1</b> Events</a></li>
+<li class="chapter" data-level="1.2" data-path="probability.html"><a href="probability.html#addition-rule"><i class="fa fa-check"></i><b>1.2</b> Addition Rule</a></li>
+<li class="chapter" data-level="1.3" data-path="probability.html"><a href="probability.html#multiplication-rule"><i class="fa fa-check"></i><b>1.3</b> Multiplication Rule</a></li>
+<li class="chapter" data-level="1.4" data-path="probability.html"><a href="probability.html#marginal-or-unconditional-probability"><i class="fa fa-check"></i><b>1.4</b> Marginal or Unconditional Probability:</a></li>
+<li class="chapter" data-level="1.5" data-path="probability.html"><a href="probability.html#joint-probability"><i class="fa fa-check"></i><b>1.5</b> Joint Probability</a></li>
+<li class="chapter" data-level="1.6" data-path="probability.html"><a href="probability.html#conditional-probability"><i class="fa fa-check"></i><b>1.6</b> Conditional Probability</a></li>
+<li class="chapter" data-level="1.7" data-path="probability.html"><a href="probability.html#counting-events"><i class="fa fa-check"></i><b>1.7</b> Counting Events</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="probability.html"><a href="probability.html#permutation"><i class="fa fa-check"></i><b>1.7.1</b> Permutation</a></li>
+<li class="chapter" data-level="1.7.2" data-path="probability.html"><a href="probability.html#combinations"><i class="fa fa-check"></i><b>1.7.2</b> Combinations</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="probability.html"><a href="probability.html#approach-to-solve-a-problem"><i class="fa fa-check"></i><b>1.8</b> Approach to solve a problem</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="basic-statistics.html"><a href="basic-statistics.html"><i class="fa fa-check"></i><b>2</b> Basic Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="basic-statistics.html"><a href="basic-statistics.html#summarizing-quantitative-data"><i class="fa fa-check"></i><b>2.1</b> Summarizing Quantitative Data</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="basic-statistics.html"><a href="basic-statistics.html#effect-of-outliers"><i class="fa fa-check"></i><b>2.1.1</b> Effect of Outliers</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="basic-statistics.html"><a href="basic-statistics.html#spread-and-variation-of-data"><i class="fa fa-check"></i><b>2.2</b> Spread and Variation of Data</a></li>
+<li class="chapter" data-level="2.3" data-path="basic-statistics.html"><a href="basic-statistics.html#measure-of-discrete-variables"><i class="fa fa-check"></i><b>2.3</b> Measure of Discrete Variables</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="basic-statistics.html"><a href="basic-statistics.html#expected-value"><i class="fa fa-check"></i><b>2.3.1</b> Expected Value</a></li>
+<li class="chapter" data-level="2.3.2" data-path="basic-statistics.html"><a href="basic-statistics.html#expected-variance"><i class="fa fa-check"></i><b>2.3.2</b> Expected Variance</a></li>
+<li class="chapter" data-level="2.3.3" data-path="basic-statistics.html"><a href="basic-statistics.html#expected-standard-deviation"><i class="fa fa-check"></i><b>2.3.3</b> Expected Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="basic-statistics.html"><a href="basic-statistics.html#measure-of-relations"><i class="fa fa-check"></i><b>2.4</b> Measure of Relations</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="basic-statistics.html"><a href="basic-statistics.html#coefficient-of-variation"><i class="fa fa-check"></i><b>2.4.1</b> Coefficient of Variation</a></li>
+<li class="chapter" data-level="2.4.2" data-path="basic-statistics.html"><a href="basic-statistics.html#covariance"><i class="fa fa-check"></i><b>2.4.2</b> Covariance</a></li>
+<li class="chapter" data-level="2.4.3" data-path="basic-statistics.html"><a href="basic-statistics.html#coefficient-of-correlation"><i class="fa fa-check"></i><b>2.4.3</b> Coefficient of Correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="basic-statistics.html"><a href="basic-statistics.html#shape-of-distribution"><i class="fa fa-check"></i><b>2.5</b> Shape of Distribution</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="basic-statistics.html"><a href="basic-statistics.html#skewness"><i class="fa fa-check"></i><b>2.5.1</b> Skewness</a></li>
+<li class="chapter" data-level="2.5.2" data-path="basic-statistics.html"><a href="basic-statistics.html#kurtosis"><i class="fa fa-check"></i><b>2.5.2</b> Kurtosis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="advance-statistics.html"><a href="advance-statistics.html"><i class="fa fa-check"></i><b>3</b> Advance Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="advance-statistics.html"><a href="advance-statistics.html#frequency-distribution"><i class="fa fa-check"></i><b>3.1</b> Frequency Distribution</a></li>
+<li class="chapter" data-level="3.2" data-path="advance-statistics.html"><a href="advance-statistics.html#probability-distribution-functions-pdf"><i class="fa fa-check"></i><b>3.2</b> Probability Distribution Functions (PDF)</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="advance-statistics.html"><a href="advance-statistics.html#bernoulli-distribution"><i class="fa fa-check"></i><b>3.2.1</b> Bernoulli Distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="advance-statistics.html"><a href="advance-statistics.html#binomial-probability-distribution"><i class="fa fa-check"></i><b>3.2.2</b> Binomial Probability Distribution</a></li>
+<li class="chapter" data-level="3.2.3" data-path="advance-statistics.html"><a href="advance-statistics.html#poisson-probability-distribution"><i class="fa fa-check"></i><b>3.2.3</b> Poisson Probability Distribution</a></li>
+<li class="chapter" data-level="3.2.4" data-path="advance-statistics.html"><a href="advance-statistics.html#uniform-distribution"><i class="fa fa-check"></i><b>3.2.4</b> Uniform Distribution</a></li>
+<li class="chapter" data-level="3.2.5" data-path="advance-statistics.html"><a href="advance-statistics.html#normal-distribution"><i class="fa fa-check"></i><b>3.2.5</b> Normal Distribution</a></li>
+<li class="chapter" data-level="3.2.6" data-path="advance-statistics.html"><a href="advance-statistics.html#standardized-normal-or-z-score"><i class="fa fa-check"></i><b>3.2.6</b> Standardized Normal or Z score</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="advance-statistics.html"><a href="advance-statistics.html#sampling-distributions"><i class="fa fa-check"></i><b>3.3</b> Sampling Distributions</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="advance-statistics.html"><a href="advance-statistics.html#developing-a-sampling-distributions"><i class="fa fa-check"></i><b>3.3.1</b> Developing a Sampling Distributions</a></li>
+<li class="chapter" data-level="3.3.2" data-path="advance-statistics.html"><a href="advance-statistics.html#central-limit-theorem"><i class="fa fa-check"></i><b>3.3.2</b> Central Limit Theorem</a></li>
+<li class="chapter" data-level="3.3.3" data-path="advance-statistics.html"><a href="advance-statistics.html#point-and-interval-estimates"><i class="fa fa-check"></i><b>3.3.3</b> Point and Interval Estimates</a></li>
+<li class="chapter" data-level="3.3.4" data-path="advance-statistics.html"><a href="advance-statistics.html#confidence-intervals-and-levels"><i class="fa fa-check"></i><b>3.3.4</b> Confidence Intervals and Levels</a></li>
+<li class="chapter" data-level="3.3.5" data-path="advance-statistics.html"><a href="advance-statistics.html#confidence-interval-sigma-unknown"><i class="fa fa-check"></i><b>3.3.5</b> Confidence Interval Sigma Unknown</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="advance-statistics.html"><a href="advance-statistics.html#estimators-and-point-estimates"><i class="fa fa-check"></i><b>3.4</b> Estimators and point estimates:</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="advance-statistics.html"><a href="advance-statistics.html#population-proportion"><i class="fa fa-check"></i><b>3.4.1</b> Population Proportion</a></li>
+<li class="chapter" data-level="3.4.2" data-path="advance-statistics.html"><a href="advance-statistics.html#p-value-needs-elaboration"><i class="fa fa-check"></i><b>3.4.2</b> P Value (needs elaboration)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="blockchain.html"><a href="blockchain.html"><i class="fa fa-check"></i><b>4</b> Blockchain</a><ul>
+<li class="chapter" data-level="4.1" data-path="blockchain.html"><a href="blockchain.html#why-blockchain"><i class="fa fa-check"></i><b>4.1</b> Why Blockchain?</a></li>
+<li class="chapter" data-level="4.2" data-path="blockchain.html"><a href="blockchain.html#what-is-blockchain"><i class="fa fa-check"></i><b>4.2</b> What is Blockchain:</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="blockchain.html"><a href="blockchain.html#blockchain-flow"><i class="fa fa-check"></i><b>4.2.1</b> Blockchain Flow:</a></li>
+<li class="chapter" data-level="4.2.2" data-path="blockchain.html"><a href="blockchain.html#consensus-mechanism"><i class="fa fa-check"></i><b>4.2.2</b> Consensus Mechanism:</a></li>
+<li class="chapter" data-level="4.2.3" data-path="blockchain.html"><a href="blockchain.html#types-of-blockchain"><i class="fa fa-check"></i><b>4.2.3</b> Types of Blockchain:</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="blockchain.html"><a href="blockchain.html#blockchain-implementations"><i class="fa fa-check"></i><b>4.3</b> Blockchain implementations</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="blockchain.html"><a href="blockchain.html#bitcoin-btc"><i class="fa fa-check"></i><b>4.3.1</b> Bitcoin BTC</a></li>
+<li class="chapter" data-level="4.3.2" data-path="blockchain.html"><a href="blockchain.html#hyperledger-fabric"><i class="fa fa-check"></i><b>4.3.2</b> Hyperledger Fabric</a></li>
+<li class="chapter" data-level="4.3.3" data-path="blockchain.html"><a href="blockchain.html#ethereum"><i class="fa fa-check"></i><b>4.3.3</b> Ethereum</a></li>
+<li class="chapter" data-level="4.3.4" data-path="blockchain.html"><a href="blockchain.html#agritech-blockchain"><i class="fa fa-check"></i><b>4.3.4</b> Agritech Blockchain</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="blockchain.html"><a href="blockchain.html#blockchain-in-healthcare"><i class="fa fa-check"></i><b>4.4</b> Blockchain in Healthcare</a></li>
+<li class="chapter" data-level="4.5" data-path="blockchain.html"><a href="blockchain.html#blockchain-in-banking-industry"><i class="fa fa-check"></i><b>4.5</b> Blockchain in Banking Industry</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="blockchain.html"><a href="blockchain.html#blockchain-features-and-its-use-in-banking-industry"><i class="fa fa-check"></i><b>4.5.1</b> Blockchain features and its use in Banking Industry</a></li>
+<li class="chapter" data-level="4.5.2" data-path="blockchain.html"><a href="blockchain.html#how-blockchain-can-help-banking-industry-grow-and-achieve-pre-eminence"><i class="fa fa-check"></i><b>4.5.2</b> How blockchain can help Banking Industry grow and achieve pre-eminence?</a></li>
+<li class="chapter" data-level="4.5.3" data-path="blockchain.html"><a href="blockchain.html#vision-and-goal-of-blockchain-in-banking-industry"><i class="fa fa-check"></i><b>4.5.3</b> Vision and Goal of blockchain in Banking Industry</a></li>
+<li class="chapter" data-level="4.5.4" data-path="blockchain.html"><a href="blockchain.html#blockchain-architecture-in-banking-industry"><i class="fa fa-check"></i><b>4.5.4</b> Blockchain Architecture in Banking Industry</a></li>
+<li class="chapter" data-level="4.5.5" data-path="blockchain.html"><a href="blockchain.html#timeline-of-implementing-blockchain-in-banking-industry"><i class="fa fa-check"></i><b>4.5.5</b> Timeline of implementing blockchain in Banking Industry</a></li>
+<li class="chapter" data-level="4.5.6" data-path="blockchain.html"><a href="blockchain.html#things-to-consider-before-using-blockchain-in-banking-industry"><i class="fa fa-check"></i><b>4.5.6</b> Things to Consider before using blockchain in Banking Industry</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="numpy.html"><a href="numpy.html"><i class="fa fa-check"></i><b>5</b> NumPy</a><ul>
+<li class="chapter" data-level="5.1" data-path="numpy.html"><a href="numpy.html#numpy-arrays"><i class="fa fa-check"></i><b>5.1</b> Numpy Arrays</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="numpy.html"><a href="numpy.html#arange"><i class="fa fa-check"></i><b>5.1.1</b> arange</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="numpy.html"><a href="numpy.html#differences"><i class="fa fa-check"></i><b>5.2</b> Differences</a></li>
+<li class="chapter" data-level="5.3" data-path="numpy.html"><a href="numpy.html#functions"><i class="fa fa-check"></i><b>5.3</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="python.html"><a href="python.html"><i class="fa fa-check"></i><b>6</b> Python</a><ul>
+<li class="chapter" data-level="6.0.1" data-path="python.html"><a href="python.html#map-and-filter"><i class="fa fa-check"></i><b>6.0.1</b> Map and Filter</a></li>
+<li class="chapter" data-level="6.1" data-path="python.html"><a href="python.html#web-dev-libs"><i class="fa fa-check"></i><b>6.1</b> Web Dev Libs</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>7</b> Data Wrangling</a><ul>
+<li class="chapter" data-level="7.1" data-path="data-wrangling.html"><a href="data-wrangling.html#what-is-data-manipulation"><i class="fa fa-check"></i><b>7.1</b> What is Data Manipulation?</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="data-wrangling.html"><a href="data-wrangling.html#filter"><i class="fa fa-check"></i><b>7.1.1</b> Filter</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="data-wrangling.html"><a href="data-wrangling.html#doing-same-stuff-using-r"><i class="fa fa-check"></i><b>7.2</b> Doing same stuff using R</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="logistic-regression.html"><a href="logistic-regression.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a><ul>
+<li class="chapter" data-level="8.0.1" data-path="logistic-regression.html"><a href="logistic-regression.html#difference-between-logistic-and-linear-equations"><i class="fa fa-check"></i><b>8.0.1</b> Difference between logistic and linear equations</a></li>
+<li class="chapter" data-level="8.0.2" data-path="logistic-regression.html"><a href="logistic-regression.html#model-evaluation"><i class="fa fa-check"></i><b>8.0.2</b> Model Evaluation</a></li>
+<li class="chapter" data-level="8.0.3" data-path="logistic-regression.html"><a href="logistic-regression.html#accuracy"><i class="fa fa-check"></i><b>8.0.3</b> Accuracy:</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="exercises-on-data-science.html"><a href="exercises-on-data-science.html"><i class="fa fa-check"></i><b>9</b> Exercises on data science</a><ul>
+<li class="chapter" data-level="9.1" data-path="exercises-on-data-science.html"><a href="exercises-on-data-science.html#plotly"><i class="fa fa-check"></i><b>9.1</b> Plotly</a></li>
+<li class="chapter" data-level="9.2" data-path="exercises-on-data-science.html"><a href="exercises-on-data-science.html#seaborn"><i class="fa fa-check"></i><b>9.2</b> Seaborn</a></li>
+</ul></li>
+<li class="part"><span><b>II DWeb Development</b></span></li>
+<li class="chapter" data-level="10" data-path="web-server-configuration.html"><a href="web-server-configuration.html"><i class="fa fa-check"></i><b>10</b> Web Server Configuration</a><ul>
+<li class="chapter" data-level="10.1" data-path="web-server-configuration.html"><a href="web-server-configuration.html#ubuntu-server-configuration"><i class="fa fa-check"></i><b>10.1</b> Ubuntu Server Configuration</a></li>
+<li class="chapter" data-level="10.2" data-path="web-server-configuration.html"><a href="web-server-configuration.html#install-apache2-php-and-mysql-using-lamp"><i class="fa fa-check"></i><b>10.2</b> Install Apache2 PHP and MySQL using LAMP</a></li>
+<li class="chapter" data-level="10.3" data-path="web-server-configuration.html"><a href="web-server-configuration.html#domain-configuration"><i class="fa fa-check"></i><b>10.3</b> Domain Configuration</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="web-server-configuration.html"><a href="web-server-configuration.html#add-sites-to-apache-server"><i class="fa fa-check"></i><b>10.3.1</b> Add sites to Apache Server</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="web-server-configuration.html"><a href="web-server-configuration.html#mysql-database-configuration"><i class="fa fa-check"></i><b>10.4</b> MySQL Database Configuration</a></li>
+<li class="chapter" data-level="10.5" data-path="web-server-configuration.html"><a href="web-server-configuration.html#wordpress-installation-on-ubuntu-server"><i class="fa fa-check"></i><b>10.5</b> Wordpress Installation on Ubuntu Server</a></li>
+<li class="chapter" data-level="10.6" data-path="web-server-configuration.html"><a href="web-server-configuration.html#web-server-tuning"><i class="fa fa-check"></i><b>10.6</b> Web Server Tuning</a></li>
+<li class="chapter" data-level="10.7" data-path="web-server-configuration.html"><a href="web-server-configuration.html#how-to-add-multiple-domains-on-apache-web-server"><i class="fa fa-check"></i><b>10.7</b> How to add multiple domains on Apache Web Server</a></li>
+<li class="chapter" data-level="10.8" data-path="web-server-configuration.html"><a href="web-server-configuration.html#serve-python-files-on-apache-web-server"><i class="fa fa-check"></i><b>10.8</b> Serve Python files on Apache Web Server</a><ul>
+<li class="chapter" data-level="10.8.1" data-path="web-server-configuration.html"><a href="web-server-configuration.html#cgi-scripts"><i class="fa fa-check"></i><b>10.8.1</b> CGI Scripts:</a></li>
+<li class="chapter" data-level="10.8.2" data-path="web-server-configuration.html"><a href="web-server-configuration.html#wsgi"><i class="fa fa-check"></i><b>10.8.2</b> WSGI:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="sqls.html"><a href="sqls.html"><i class="fa fa-check"></i><b>11</b> SQLs</a><ul>
+<li class="chapter" data-level="11.1" data-path="sqls.html"><a href="sqls.html#sqlite"><i class="fa fa-check"></i><b>11.1</b> SQLite</a></li>
+<li class="chapter" data-level="11.2" data-path="sqls.html"><a href="sqls.html#sqlalchemy"><i class="fa fa-check"></i><b>11.2</b> SQLAlchemy</a></li>
+<li class="chapter" data-level="11.3" data-path="sqls.html"><a href="sqls.html#mysql"><i class="fa fa-check"></i><b>11.3</b> MySQL</a></li>
+<li class="chapter" data-level="11.4" data-path="sqls.html"><a href="sqls.html#mongo-db"><i class="fa fa-check"></i><b>11.4</b> Mongo DB</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The VY notebook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="basic-statistics" class="section level1">
+<h1><span class="header-section-number">2</span> Basic Statistics</h1>
+<p>Basics of statistics for Data Science.</p>
+<p><strong>Central tendency</strong> measures tell us how values are grouped around the centre value.</p>
+<p><strong>Variation</strong> tells us how disperse the data is or how much it is scattered</p>
+<p><strong>Shape</strong> tells us the pattern of distribution of values. How the data is distributed in a frequency.</p>
+<p>Two type:
+- Descriptive
+- Inferential</p>
+<div id="summarizing-quantitative-data" class="section level2">
+<h2><span class="header-section-number">2.1</span> Summarizing Quantitative Data</h2>
+<p>Mean median and mode are three ways to summarize the data and to measure the central tendency of data. These are usually calculated for quantitative data.</p>
+<p><strong>Mean</strong></p>
+<p>Average or mean are one and the same thing. It is sum of all the data points divided by number of data points.</p>
+<p><span class="math display">\[ 𝜇 = \frac{ \sum_{i=0}^n x_i }{ n } \]</span></p>
+<p>It gets affected by the outliers .</p>
+<p><strong>Median</strong></p>
+<p>It is the middle number in an ordered list.</p>
+<p>If it’s even then it is sum of two middle number divided by 2, else it’s the middle one.</p>
+<p>if <span class="math inline">\(n = even\)</span> then: <span class="math inline">\((a+b)/2\)</span> where a and b are middle numbers.</p>
+<p>It is not affected by the extreme values.</p>
+<p><strong>Mode</strong></p>
+<p>It is the most <em>common number</em> or the most frequent number in the dataset.</p>
+<p><em>No mode</em>, if the values in a given set all occur the same number of times, the data set has no mode because no number is any more common than any other.</p>
+<p><em>Several mode</em> if more than one number is repeated same number of times.</p>
+<p>It is not affected by extreme values.</p>
+<p><strong>Geometric Mean</strong></p>
+<p>It is used to measure rate of change of variable over time. For eg, rate of return on investment over years.</p>
+<p><span class="math display">\[ X_G = (X_1 \ x \  X_2 \ x\ ... \ x\  X_n)^{(1/n)} \]</span></p>
+<p>GM rate of return, here <span class="math inline">\(R_i\)</span> is rate of return in time period i</p>
+<p><span class="math display">\[ R_G = [ (1 + R_1) \ x \ (1 + R_2) \ x ... x \ (1 + R_n) ]^{(1/n)} - 1 \]</span></p>
+<div id="effect-of-outliers" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Effect of Outliers</h3>
+<p>Removing a big outlier decreases the mean more but less change on median and may be median doesn’t change.</p>
+</div>
+</div>
+<div id="spread-and-variation-of-data" class="section level2">
+<h2><span class="header-section-number">2.2</span> Spread and Variation of Data</h2>
+<p>The spread of data can be measured by its range, interquartile range (IQR), variance, standard deviation. and coefficient of Variation.</p>
+<p><strong>Range</strong></p>
+<p>It is difference between largest and smallest value in data. It is not dependent on distribution of data and is sensitive to outliers.</p>
+<p><strong>Interquartile Range</strong></p>
+<p>Quartiles divide the ordered data in to 4 segments. Each have equal number of values. Median (Q2) divides the dataset into two different parts. IQR is the difference in the middle of the first half (Q1) and the middle of second half (Q3). We then find the median of these two different parts and then find the difference.</p>
+<p>If we have even number of data points in dataset then we include the first middle number in first set and the second middle number in second set.</p>
+<p>IQR is useful to find out how much the data is varying.</p>
+<p>Range can be misleading when we have outliers. But in this case interquartile range can give us much better measure of spread of data.</p>
+<p><span class="math inline">\(IQR\)</span> = md 2nd quartile - md 1st quartile = <span class="math inline">\(Q_3 - Q_2\)</span></p>
+<p><strong>Quartile Measures</strong></p>
+<ul>
+<li>Q1, is the value for which 25% of the observations are smaller and 75% are larger</li>
+<li>Q2 is the same as the median (50% of the observations are smaller and 50% are larger)</li>
+<li>Only 25% of the observations are greater than the Q3</li>
+</ul>
+<p>A <em>box plot</em> shows Min, Q1, Q2, Q3 and Max values of data.</p>
+<p><strong>Measure of spread</strong></p>
+<p>Measure of spread can be found by calculating range variance and standard deviation.
+- Sample is part of data while population is entire dataset.
+- We can estimate population by using these measures from the samples.</p>
+<p><strong>Variance</strong></p>
+<p>Squared deviation of values from the mean</p>
+<p><span class="math display">\[ 𝜎^2 = \frac{ \sum(x_i - 𝜇)^2 }{ n } = \frac{ \sum(x_i)^2 }{ n } - 𝜇^2 \]</span></p>
+<p><strong>Standard Deviation</strong></p>
+<p>Variation about the mean. It has <em>same unit as the original data</em>.</p>
+<p><span class="math display">\[ 𝜎 = \sqrt{Variance} = \sqrt{𝜎^2} = \sqrt \frac{ \sum_{1}^n(x_i - 𝜇)^2 }{ n }\]</span></p>
+<p><strong>For example:</strong></p>
+<p>A = [-10, 0, 10, 20, 30]</p>
+<p>B = [8, 9, 10, 11, 12]</p>
+<p>Mean of two data set is same (10) but range varies. So we calculate variance to show difference between datasets.</p>
+<p><span class="math display">\[ 𝜎^2(A) = 200 \]</span></p>
+<p><span class="math display">\[ 𝜎^2(B) = 2 \]</span></p>
+<p><span class="math display">\[ 𝜎(A) = \sqrt{200} = 10\sqrt{2} \]</span></p>
+<p><span class="math display">\[ 𝜎(B) = \sqrt{2} \]</span></p>
+<p><strong>Result</strong></p>
+<p>Hence, points in A are 10 times more deviated.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>The more the spread, the greater is range, variance and SD</li>
+<li>The more data is contracted, the smaller these measures are.</li>
+<li>Standard Deviations tells us how far we are from the mean.</li>
+<li>If all values are same (no variation) then all these are zero.</li>
+<li>None of these measures can ever be negative.</li>
+<li>Adding a number to all values, <span class="math inline">\(x_i\)</span>, makes no difference to variance.</li>
+<li>Multiplying a number, k, to all values, <span class="math inline">\(x_i\)</span>, makes variance <span class="math inline">\(𝜎^2 \times k\)</span></li>
+</ul>
+<p><strong>Better measures</strong></p>
+<p>What defines dataset better, mean or median?
+- Mean can give us the standard deviation, median can you give us IQR.
+- Mean is better for symmetric dataset, median is better for skewed dataset which has outliers.
+- Median is better for salaries and home prices as it has outliers.</p>
+</div>
+<div id="measure-of-discrete-variables" class="section level2">
+<h2><span class="header-section-number">2.3</span> Measure of Discrete Variables</h2>
+<p>Discrete Variable has a finite outcome. It has a fixed values. The events are <strong>mutually exclusive</strong>.</p>
+<div id="expected-value" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Expected Value</h3>
+<p>This is measure of center. Also called <strong>weighted average</strong>.</p>
+<p><span class="math display">\[ 𝜇 = E(X) = \sum_{i=1}^N X_i P(X=X_i) \]</span></p>
+<p>This is sum of each (value x probability)</p>
+</div>
+<div id="expected-variance" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Expected Variance</h3>
+<p>Difference from mean, squared times probability, then sum:</p>
+<p><span class="math display">\[ 𝜎^2 = \sum_{i=1}^N [X_i - E(X)]^2 P(X=X_i) \]</span></p>
+</div>
+<div id="expected-standard-deviation" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> Expected Standard Deviation</h3>
+<p>Difference from mean, squared times probability, then sum:</p>
+<p><span class="math display">\[ 𝜎 = \sqrt{𝜎^2} = \sqrt{ \sum_{i=1}^N [X_i - E(X)]^2 P(X=X_i) } \]</span></p>
+</div>
+</div>
+<div id="measure-of-relations" class="section level2">
+<h2><span class="header-section-number">2.4</span> Measure of Relations</h2>
+<div id="coefficient-of-variation" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Coefficient of Variation</h3>
+<p>Coefficient is the multiplicative factor. That is how many times a variable is of another variable.</p>
+<p>Here we compare variation and mean. So it <strong>variation relative to mean</strong>. Always in percentage, and can compare data with different units.</p>
+<p><span class="math display">\[ CV = \frac{ S }{ X } \times 100\% \]</span></p>
+<p>For example,</p>
+<p>Stock A = $50, SD = $5</p>
+<p>CV(A) = (5/50)*100% = 10%</p>
+<p>Stock B = $100, SD = $5</p>
+<p>CV(B) = (5/100)*100% = 5%</p>
+<p>Hence, both stocks have same SD, but stock B is less variable relative to its price.</p>
+</div>
+<div id="covariance" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Covariance</h3>
+<p>Measure of strength of linear relationship between two discrete random variables X and Y.</p>
+<p><span class="math display">\[ 𝜎_{XY} = \sum_{i=1}^N [X_i - E(X)][Y_i - E(Y)] P(X=X_i,Y=Y_i)  \]</span></p>
+<p>where, <span class="math inline">\(P(X=X_i,Y=Y_i)\)</span> is probability of occurrence of the i outcome of X and the i outcome of Y.</p>
+</div>
+<div id="coefficient-of-correlation" class="section level3">
+<h3><span class="header-section-number">2.4.3</span> Coefficient of Correlation</h3>
+<p>The relative strength of linear relation between two variables is called correlation. It is between -1 and 1.</p>
+<p><span class="math display">\[ r = \frac{cov(X,Y)}{S_XS_Y} \]</span></p>
+<p>This is covariance relative to standard deviation. In above,</p>
+<p><span class="math display">\[ cov(X,Y) =  \frac{\sum_{i=1}^N [X_i - \overline{X}][Y_i - \overline{Y}]}{n-1} \]</span>
+<span class="math display">\[ S_X =  \sqrt{ \frac{\sum_{i=1}^N [X_i - \overline{X}]^2}{n-1} } \]</span>
+<span class="math display">\[ S_Y =  \sqrt{ \frac{\sum_{i=1}^N [Y_i - \overline{Y}]^2}{n-1} } \]</span></p>
+<p>Cor = 0, means no linear relation, but may has non-linear relation.</p>
+<p>In investment portfolio, expected return and standard deviation of two funds together can be calculated.</p>
+</div>
+</div>
+<div id="shape-of-distribution" class="section level2">
+<h2><span class="header-section-number">2.5</span> Shape of Distribution</h2>
+<p>This tells us how data is distributed. It can be measure by:
+- Skewness: Extent to which data values are not symmetrical
+- Kurtosis: Affects the peakedness of the curve of the distribution. It tell the sharpness of rise of curve. Bell shaped is Mesokurtic (Kurtosis = 0).</p>
+<div id="skewness" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> Skewness</h3>
+<p>Data can be symmetric, left or right skewed. If it is symmetric then we can work on half of the sample of data.</p>
+<p>Left: Mean &lt; Median
+Symmetric: Mean = Median
+Right: Median &lt; Mean</p>
+</div>
+<div id="kurtosis" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> Kurtosis</h3>
+<p>How sharply the curve rises. Eg:
+- High rise, Kurtosis &gt; 0, Leptokurtic.
+- Bell shaped, Kurtosis = 0, Mesokurtic.
+- Low rise, Kurtosis &lt; 0, Platykurtic.</p>
+<blockquote>
+<p>Image of shape and quartiles and box plot</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="probability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="advance-statistics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/iyadavvaibhav/vybook/edit/master/data_science/statistics.md",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
