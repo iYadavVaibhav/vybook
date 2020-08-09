@@ -3,3 +3,5 @@ This repository contains source files for notes on various topics I go through. 
 This book is written in [BookDown](), GitBook kind of book using RMarkDown.
 
 It can be accessed from this [link](http://iyadavvaibhav.github.io/vybook/).
+
+Thank you.
