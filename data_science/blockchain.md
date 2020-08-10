@@ -36,7 +36,8 @@ Blockchain is a digital, immutable, distributed ledger that chronologically reco
 - Once verified, the transaction is combined with other transactions to create a new block of data in the ledger.
 - New block is added to existing blockchain in a way that is permanent and unalterable,
 - This completes the transaction.
-![image](../images/blockchain_flow.webp "blockchain flow")
+<img src="../images/blockchain_flow.webp" alt="blockchain flow" style="max-width: 600px">
+
 
 ### Consensus Mechanism:
 - agreement to verify a block to be added to blockchain.

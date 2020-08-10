@@ -1,5 +1,5 @@
 --- 
-title: "The VY notebook"
+title: "The VY Notebook"
 subtitle: "Notes on my learnings and understandings"
 author: "Vaibhav Yadav"
 date: "`r Sys.Date()`"
@@ -26,6 +26,13 @@ always_allow_html: yes
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'), 'packages.bib')
 ```
+
 # Preface {-}
 
-This book started out to include figures in my markdown notes.
+This book uses [Bookdown](https://bookdown.org/) for all the articles. Bookdown supports live code in R and Python (many other languages as well). The code outputs can be embedded in the book directly. Bookdown also has many other options that help take lecture notes. This is why I started taking notes in this bookdown rather than other MarkDown blogging softwares.
+
+This book has notes and understandings of articles and lectures taken by me, [Vaibhav Yadav](https://iyadavvaibhav.github.io/). These articles/chapters might be incomplete or hard to understand as they are not written for explaining any topic but are for dumping the notes to refer back. I however, include various links and references whereever possible, these can be reference when needed.
+
+If you have any suggestions, please email author at iYadavVaibhav [at] gmail [dot] com.
+
+Thank you!

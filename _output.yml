@@ -1,5 +1,8 @@
 bookdown::gitbook:
   css: style.css
+  #pandoc_args: --from=markdown+autolink_bare_uris+tex_math_single_backslash
+  md_extensions: +lists_without_preceding_blankline+pipe_tables+raw_html+emoji
+
   config:
     toc:
       collapse: section
@@ -9,7 +12,7 @@ bookdown::gitbook:
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     edit:
       link: https://github.com/iyadavvaibhav/vybook/edit/master/%s
-      text: "Edit"
+      text: "View MarkDown"
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

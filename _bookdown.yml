@@ -12,20 +12,23 @@ language:
 
 rmd_files: [
   "index.Rmd", 
+
   "data_science/probability.md",
   "data_science/statistics.md",
   "data_science/statistics_advanced.md",
+
+  "data_science/logistic_regression.md",
+
   "data_science/blockchain.md",
+
   "data_science/numpy.md",
   "data_science/python.md",
   "data_science/data_wrangling.md",
-  "data_science/logistic_regression.md",
+  
   "data_science/ds_exercise.rmd",
-  "web_dev/web_server.md",
-  "web_dev/sql.md",
   ] # optional, if not then all are picked
 
-# before_chapter_script: "_common.R"
+before_chapter_script: "_common.R"
 
 # clean: [packages.bib, bookdown.bbl]
 # new_session: yes # optional, each Rmd file will have new session

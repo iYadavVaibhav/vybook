@@ -1,3 +1,11 @@
+
+options(bookdown.render.file_scope = FALSE);
+
+knitr::opts_chunk$set(engine.path = list(
+  python = '/Users/vaibhavyadav/anaconda3/bin/python',
+  ruby = '/usr/bin/ruby'
+))
+
 # rm(list = ls(all = TRUE))
 # library(maps)## load maps first to avoid map conflict with purrr
 # library(MASS) ## load MASS and matrixStats first to avoid select and count conflict
@@ -22,10 +30,3 @@
 #   fig.show = "hold")
 
 # options(dplyr.print_min = 5, dplyr.print_max = 5)
-
-options(bookdown.render.file_scope = FALSE);
-
-knitr::opts_chunk$set(engine.path = list(
-  python = '/Users/vaibhavyadav/anaconda3/bin/python',
-  ruby = '/usr/bin/ruby'
-))

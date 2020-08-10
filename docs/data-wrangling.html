@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 Data Wrangling | The VY notebook</title>
+  <title>8 Data Wrangling | The VY Notebook</title>
   <meta name="description" content="This book has notes and understandings of articles and lectures taken by Vaibhav Yadav. These articles/chapters can be hard to understand as they are not written for explaining any topic but are for dumping the notes to refer back. if you have any suggestions, please email author at iYadavVaibhav [at] gmail [dot] com." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 Data Wrangling | The VY notebook" />
+  <meta property="og:title" content="8 Data Wrangling | The VY Notebook" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 Data Wrangling | The VY notebook" />
+  <meta name="twitter:title" content="8 Data Wrangling | The VY Notebook" />
   
   <meta name="twitter:description" content="This book has notes and understandings of articles and lectures taken by Vaibhav Yadav. These articles/chapters can be hard to understand as they are not written for explaining any topic but are for dumping the notes to refer back. if you have any suggestions, please email author at iYadavVaibhav [at] gmail [dot] com." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Vaibhav Yadav" />
 
 
-<meta name="date" content="2020-08-09" />
+<meta name="date" content="2020-08-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="python.html"/>
-<link rel="next" href="logistic-regression.html"/>
+<link rel="next" href="plotting-in-bookdown.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -132,7 +132,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="part"><span><b>I Data Science</b></span></li>
+<li class="part"><span><b>I PART 1: Data Science</b></span></li>
 <li class="chapter" data-level="1" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>1</b> Probability</a><ul>
 <li class="chapter" data-level="1.1" data-path="probability.html"><a href="probability.html#events"><i class="fa fa-check"></i><b>1.1</b> Events</a></li>
 <li class="chapter" data-level="1.2" data-path="probability.html"><a href="probability.html#addition-rule"><i class="fa fa-check"></i><b>1.2</b> Addition Rule</a></li>
@@ -188,76 +188,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4.2" data-path="advance-statistics.html"><a href="advance-statistics.html#p-value-needs-elaboration"><i class="fa fa-check"></i><b>3.4.2</b> P Value (needs elaboration)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="blockchain.html"><a href="blockchain.html"><i class="fa fa-check"></i><b>4</b> Blockchain</a><ul>
-<li class="chapter" data-level="4.1" data-path="blockchain.html"><a href="blockchain.html#why-blockchain"><i class="fa fa-check"></i><b>4.1</b> Why Blockchain?</a></li>
-<li class="chapter" data-level="4.2" data-path="blockchain.html"><a href="blockchain.html#what-is-blockchain"><i class="fa fa-check"></i><b>4.2</b> What is Blockchain:</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="blockchain.html"><a href="blockchain.html#blockchain-flow"><i class="fa fa-check"></i><b>4.2.1</b> Blockchain Flow:</a></li>
-<li class="chapter" data-level="4.2.2" data-path="blockchain.html"><a href="blockchain.html#consensus-mechanism"><i class="fa fa-check"></i><b>4.2.2</b> Consensus Mechanism:</a></li>
-<li class="chapter" data-level="4.2.3" data-path="blockchain.html"><a href="blockchain.html#types-of-blockchain"><i class="fa fa-check"></i><b>4.2.3</b> Types of Blockchain:</a></li>
+<li class="chapter" data-level="4" data-path="logistic-regression.html"><a href="logistic-regression.html"><i class="fa fa-check"></i><b>4</b> Logistic Regression</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="logistic-regression.html"><a href="logistic-regression.html#difference-between-logistic-and-linear-equations"><i class="fa fa-check"></i><b>4.0.1</b> Difference between logistic and linear equations</a></li>
+<li class="chapter" data-level="4.0.2" data-path="logistic-regression.html"><a href="logistic-regression.html#model-evaluation"><i class="fa fa-check"></i><b>4.0.2</b> Model Evaluation</a></li>
+<li class="chapter" data-level="4.0.3" data-path="logistic-regression.html"><a href="logistic-regression.html#accuracy"><i class="fa fa-check"></i><b>4.0.3</b> Accuracy:</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="blockchain.html"><a href="blockchain.html#blockchain-implementations"><i class="fa fa-check"></i><b>4.3</b> Blockchain implementations</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="blockchain.html"><a href="blockchain.html#bitcoin-btc"><i class="fa fa-check"></i><b>4.3.1</b> Bitcoin BTC</a></li>
-<li class="chapter" data-level="4.3.2" data-path="blockchain.html"><a href="blockchain.html#hyperledger-fabric"><i class="fa fa-check"></i><b>4.3.2</b> Hyperledger Fabric</a></li>
-<li class="chapter" data-level="4.3.3" data-path="blockchain.html"><a href="blockchain.html#ethereum"><i class="fa fa-check"></i><b>4.3.3</b> Ethereum</a></li>
-<li class="chapter" data-level="4.3.4" data-path="blockchain.html"><a href="blockchain.html#agritech-blockchain"><i class="fa fa-check"></i><b>4.3.4</b> Agritech Blockchain</a></li>
+<li class="chapter" data-level="5" data-path="blockchain.html"><a href="blockchain.html"><i class="fa fa-check"></i><b>5</b> Blockchain</a><ul>
+<li class="chapter" data-level="5.1" data-path="blockchain.html"><a href="blockchain.html#why-blockchain"><i class="fa fa-check"></i><b>5.1</b> Why Blockchain?</a></li>
+<li class="chapter" data-level="5.2" data-path="blockchain.html"><a href="blockchain.html#what-is-blockchain"><i class="fa fa-check"></i><b>5.2</b> What is Blockchain:</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="blockchain.html"><a href="blockchain.html#blockchain-flow"><i class="fa fa-check"></i><b>5.2.1</b> Blockchain Flow:</a></li>
+<li class="chapter" data-level="5.2.2" data-path="blockchain.html"><a href="blockchain.html#consensus-mechanism"><i class="fa fa-check"></i><b>5.2.2</b> Consensus Mechanism:</a></li>
+<li class="chapter" data-level="5.2.3" data-path="blockchain.html"><a href="blockchain.html#types-of-blockchain"><i class="fa fa-check"></i><b>5.2.3</b> Types of Blockchain:</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="blockchain.html"><a href="blockchain.html#blockchain-in-healthcare"><i class="fa fa-check"></i><b>4.4</b> Blockchain in Healthcare</a></li>
-<li class="chapter" data-level="4.5" data-path="blockchain.html"><a href="blockchain.html#blockchain-in-banking-industry"><i class="fa fa-check"></i><b>4.5</b> Blockchain in Banking Industry</a><ul>
-<li class="chapter" data-level="4.5.1" data-path="blockchain.html"><a href="blockchain.html#blockchain-features-and-its-use-in-banking-industry"><i class="fa fa-check"></i><b>4.5.1</b> Blockchain features and its use in Banking Industry</a></li>
-<li class="chapter" data-level="4.5.2" data-path="blockchain.html"><a href="blockchain.html#how-blockchain-can-help-banking-industry-grow-and-achieve-pre-eminence"><i class="fa fa-check"></i><b>4.5.2</b> How blockchain can help Banking Industry grow and achieve pre-eminence?</a></li>
-<li class="chapter" data-level="4.5.3" data-path="blockchain.html"><a href="blockchain.html#vision-and-goal-of-blockchain-in-banking-industry"><i class="fa fa-check"></i><b>4.5.3</b> Vision and Goal of blockchain in Banking Industry</a></li>
-<li class="chapter" data-level="4.5.4" data-path="blockchain.html"><a href="blockchain.html#blockchain-architecture-in-banking-industry"><i class="fa fa-check"></i><b>4.5.4</b> Blockchain Architecture in Banking Industry</a></li>
-<li class="chapter" data-level="4.5.5" data-path="blockchain.html"><a href="blockchain.html#timeline-of-implementing-blockchain-in-banking-industry"><i class="fa fa-check"></i><b>4.5.5</b> Timeline of implementing blockchain in Banking Industry</a></li>
-<li class="chapter" data-level="4.5.6" data-path="blockchain.html"><a href="blockchain.html#things-to-consider-before-using-blockchain-in-banking-industry"><i class="fa fa-check"></i><b>4.5.6</b> Things to Consider before using blockchain in Banking Industry</a></li>
+<li class="chapter" data-level="5.3" data-path="blockchain.html"><a href="blockchain.html#blockchain-implementations"><i class="fa fa-check"></i><b>5.3</b> Blockchain implementations</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="blockchain.html"><a href="blockchain.html#bitcoin-btc"><i class="fa fa-check"></i><b>5.3.1</b> Bitcoin BTC</a></li>
+<li class="chapter" data-level="5.3.2" data-path="blockchain.html"><a href="blockchain.html#hyperledger-fabric"><i class="fa fa-check"></i><b>5.3.2</b> Hyperledger Fabric</a></li>
+<li class="chapter" data-level="5.3.3" data-path="blockchain.html"><a href="blockchain.html#ethereum"><i class="fa fa-check"></i><b>5.3.3</b> Ethereum</a></li>
+<li class="chapter" data-level="5.3.4" data-path="blockchain.html"><a href="blockchain.html#agritech-blockchain"><i class="fa fa-check"></i><b>5.3.4</b> Agritech Blockchain</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="numpy.html"><a href="numpy.html"><i class="fa fa-check"></i><b>5</b> NumPy</a><ul>
-<li class="chapter" data-level="5.1" data-path="numpy.html"><a href="numpy.html#numpy-arrays"><i class="fa fa-check"></i><b>5.1</b> Numpy Arrays</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="numpy.html"><a href="numpy.html#arange"><i class="fa fa-check"></i><b>5.1.1</b> arange</a></li>
-</ul></li>
-<li class="chapter" data-level="5.2" data-path="numpy.html"><a href="numpy.html#differences"><i class="fa fa-check"></i><b>5.2</b> Differences</a></li>
-<li class="chapter" data-level="5.3" data-path="numpy.html"><a href="numpy.html#functions"><i class="fa fa-check"></i><b>5.3</b> Functions</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="python.html"><a href="python.html"><i class="fa fa-check"></i><b>6</b> Python</a><ul>
-<li class="chapter" data-level="6.0.1" data-path="python.html"><a href="python.html#map-and-filter"><i class="fa fa-check"></i><b>6.0.1</b> Map and Filter</a></li>
-<li class="chapter" data-level="6.1" data-path="python.html"><a href="python.html#web-dev-libs"><i class="fa fa-check"></i><b>6.1</b> Web Dev Libs</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>7</b> Data Wrangling</a><ul>
-<li class="chapter" data-level="7.1" data-path="data-wrangling.html"><a href="data-wrangling.html#what-is-data-manipulation"><i class="fa fa-check"></i><b>7.1</b> What is Data Manipulation?</a><ul>
-<li class="chapter" data-level="7.1.1" data-path="data-wrangling.html"><a href="data-wrangling.html#filter"><i class="fa fa-check"></i><b>7.1.1</b> Filter</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="data-wrangling.html"><a href="data-wrangling.html#doing-same-stuff-using-r"><i class="fa fa-check"></i><b>7.2</b> Doing same stuff using R</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="logistic-regression.html"><a href="logistic-regression.html"><i class="fa fa-check"></i><b>8</b> Logistic Regression</a><ul>
-<li class="chapter" data-level="8.0.1" data-path="logistic-regression.html"><a href="logistic-regression.html#difference-between-logistic-and-linear-equations"><i class="fa fa-check"></i><b>8.0.1</b> Difference between logistic and linear equations</a></li>
-<li class="chapter" data-level="8.0.2" data-path="logistic-regression.html"><a href="logistic-regression.html#model-evaluation"><i class="fa fa-check"></i><b>8.0.2</b> Model Evaluation</a></li>
-<li class="chapter" data-level="8.0.3" data-path="logistic-regression.html"><a href="logistic-regression.html#accuracy"><i class="fa fa-check"></i><b>8.0.3</b> Accuracy:</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="exercises-on-data-science.html"><a href="exercises-on-data-science.html"><i class="fa fa-check"></i><b>9</b> Exercises on data science</a><ul>
-<li class="chapter" data-level="9.1" data-path="exercises-on-data-science.html"><a href="exercises-on-data-science.html#plotly"><i class="fa fa-check"></i><b>9.1</b> Plotly</a></li>
-<li class="chapter" data-level="9.2" data-path="exercises-on-data-science.html"><a href="exercises-on-data-science.html#seaborn"><i class="fa fa-check"></i><b>9.2</b> Seaborn</a></li>
-</ul></li>
-<li class="part"><span><b>II DWeb Development</b></span></li>
-<li class="chapter" data-level="10" data-path="web-server-configuration.html"><a href="web-server-configuration.html"><i class="fa fa-check"></i><b>10</b> Web Server Configuration</a><ul>
-<li class="chapter" data-level="10.1" data-path="web-server-configuration.html"><a href="web-server-configuration.html#ubuntu-server-configuration"><i class="fa fa-check"></i><b>10.1</b> Ubuntu Server Configuration</a></li>
-<li class="chapter" data-level="10.2" data-path="web-server-configuration.html"><a href="web-server-configuration.html#install-apache2-php-and-mysql-using-lamp"><i class="fa fa-check"></i><b>10.2</b> Install Apache2 PHP and MySQL using LAMP</a></li>
-<li class="chapter" data-level="10.3" data-path="web-server-configuration.html"><a href="web-server-configuration.html#domain-configuration"><i class="fa fa-check"></i><b>10.3</b> Domain Configuration</a><ul>
-<li class="chapter" data-level="10.3.1" data-path="web-server-configuration.html"><a href="web-server-configuration.html#add-sites-to-apache-server"><i class="fa fa-check"></i><b>10.3.1</b> Add sites to Apache Server</a></li>
-</ul></li>
-<li class="chapter" data-level="10.4" data-path="web-server-configuration.html"><a href="web-server-configuration.html#mysql-database-configuration"><i class="fa fa-check"></i><b>10.4</b> MySQL Database Configuration</a></li>
-<li class="chapter" data-level="10.5" data-path="web-server-configuration.html"><a href="web-server-configuration.html#wordpress-installation-on-ubuntu-server"><i class="fa fa-check"></i><b>10.5</b> Wordpress Installation on Ubuntu Server</a></li>
-<li class="chapter" data-level="10.6" data-path="web-server-configuration.html"><a href="web-server-configuration.html#web-server-tuning"><i class="fa fa-check"></i><b>10.6</b> Web Server Tuning</a></li>
-<li class="chapter" data-level="10.7" data-path="web-server-configuration.html"><a href="web-server-configuration.html#how-to-add-multiple-domains-on-apache-web-server"><i class="fa fa-check"></i><b>10.7</b> How to add multiple domains on Apache Web Server</a></li>
-<li class="chapter" data-level="10.8" data-path="web-server-configuration.html"><a href="web-server-configuration.html#serve-python-files-on-apache-web-server"><i class="fa fa-check"></i><b>10.8</b> Serve Python files on Apache Web Server</a><ul>
-<li class="chapter" data-level="10.8.1" data-path="web-server-configuration.html"><a href="web-server-configuration.html#cgi-scripts"><i class="fa fa-check"></i><b>10.8.1</b> CGI Scripts:</a></li>
-<li class="chapter" data-level="10.8.2" data-path="web-server-configuration.html"><a href="web-server-configuration.html#wsgi"><i class="fa fa-check"></i><b>10.8.2</b> WSGI:</a></li>
+<li class="chapter" data-level="5.4" data-path="blockchain.html"><a href="blockchain.html#blockchain-in-healthcare"><i class="fa fa-check"></i><b>5.4</b> Blockchain in Healthcare</a></li>
+<li class="chapter" data-level="5.5" data-path="blockchain.html"><a href="blockchain.html#blockchain-in-banking-industry"><i class="fa fa-check"></i><b>5.5</b> Blockchain in Banking Industry</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="blockchain.html"><a href="blockchain.html#blockchain-features-and-its-use-in-banking-industry"><i class="fa fa-check"></i><b>5.5.1</b> Blockchain features and its use in Banking Industry</a></li>
+<li class="chapter" data-level="5.5.2" data-path="blockchain.html"><a href="blockchain.html#how-blockchain-can-help-banking-industry-grow-and-achieve-pre-eminence"><i class="fa fa-check"></i><b>5.5.2</b> How blockchain can help Banking Industry grow and achieve pre-eminence?</a></li>
+<li class="chapter" data-level="5.5.3" data-path="blockchain.html"><a href="blockchain.html#vision-and-goal-of-blockchain-in-banking-industry"><i class="fa fa-check"></i><b>5.5.3</b> Vision and Goal of blockchain in Banking Industry</a></li>
+<li class="chapter" data-level="5.5.4" data-path="blockchain.html"><a href="blockchain.html#blockchain-architecture-in-banking-industry"><i class="fa fa-check"></i><b>5.5.4</b> Blockchain Architecture in Banking Industry</a></li>
+<li class="chapter" data-level="5.5.5" data-path="blockchain.html"><a href="blockchain.html#timeline-of-implementing-blockchain-in-banking-industry"><i class="fa fa-check"></i><b>5.5.5</b> Timeline of implementing blockchain in Banking Industry</a></li>
+<li class="chapter" data-level="5.5.6" data-path="blockchain.html"><a href="blockchain.html#things-to-consider-before-using-blockchain-in-banking-industry"><i class="fa fa-check"></i><b>5.5.6</b> Things to Consider before using blockchain in Banking Industry</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="sqls.html"><a href="sqls.html"><i class="fa fa-check"></i><b>11</b> SQLs</a><ul>
-<li class="chapter" data-level="11.1" data-path="sqls.html"><a href="sqls.html#sqlite"><i class="fa fa-check"></i><b>11.1</b> SQLite</a></li>
-<li class="chapter" data-level="11.2" data-path="sqls.html"><a href="sqls.html#sqlalchemy"><i class="fa fa-check"></i><b>11.2</b> SQLAlchemy</a></li>
-<li class="chapter" data-level="11.3" data-path="sqls.html"><a href="sqls.html#mysql"><i class="fa fa-check"></i><b>11.3</b> MySQL</a></li>
-<li class="chapter" data-level="11.4" data-path="sqls.html"><a href="sqls.html#mongo-db"><i class="fa fa-check"></i><b>11.4</b> Mongo DB</a></li>
+<li class="chapter" data-level="6" data-path="numpy.html"><a href="numpy.html"><i class="fa fa-check"></i><b>6</b> NumPy</a><ul>
+<li class="chapter" data-level="6.1" data-path="numpy.html"><a href="numpy.html#numpy-arrays"><i class="fa fa-check"></i><b>6.1</b> Numpy Arrays</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="numpy.html"><a href="numpy.html#arange"><i class="fa fa-check"></i><b>6.1.1</b> arange</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="numpy.html"><a href="numpy.html#differences"><i class="fa fa-check"></i><b>6.2</b> Differences</a></li>
+<li class="chapter" data-level="6.3" data-path="numpy.html"><a href="numpy.html#functions"><i class="fa fa-check"></i><b>6.3</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="python.html"><a href="python.html"><i class="fa fa-check"></i><b>7</b> Python</a><ul>
+<li class="chapter" data-level="7.0.1" data-path="python.html"><a href="python.html#map-and-filter"><i class="fa fa-check"></i><b>7.0.1</b> Map and Filter</a></li>
+<li class="chapter" data-level="7.1" data-path="python.html"><a href="python.html#web-dev-libs"><i class="fa fa-check"></i><b>7.1</b> Web Dev Libs</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>8</b> Data Wrangling</a><ul>
+<li class="chapter" data-level="8.1" data-path="data-wrangling.html"><a href="data-wrangling.html#what-is-data-manipulation"><i class="fa fa-check"></i><b>8.1</b> What is Data Manipulation?</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="data-wrangling.html"><a href="data-wrangling.html#filter"><i class="fa fa-check"></i><b>8.1.1</b> Filter</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="data-wrangling.html"><a href="data-wrangling.html#doing-same-stuff-using-r"><i class="fa fa-check"></i><b>8.2</b> Doing same stuff using R</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="plotting-in-bookdown.html"><a href="plotting-in-bookdown.html"><i class="fa fa-check"></i>Plotting in BookDown</a><ul>
+<li class="chapter" data-level="8.3" data-path="plotting-in-bookdown.html"><a href="plotting-in-bookdown.html#plotly"><i class="fa fa-check"></i><b>8.3</b> Plotly</a></li>
+<li class="chapter" data-level="8.4" data-path="plotting-in-bookdown.html"><a href="plotting-in-bookdown.html#seaborn"><i class="fa fa-check"></i><b>8.4</b> Seaborn</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -271,7 +249,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The VY notebook</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The VY Notebook</a>
           </h1>
         </div>
 
@@ -280,10 +258,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="data-wrangling" class="section level1">
-<h1><span class="header-section-number">7</span> Data Wrangling</h1>
+<h1><span class="header-section-number">8</span> Data Wrangling</h1>
 <p><a href="https://pandas.pydata.org/">Pandas</a> is a package in Python that can be used for data manipulation.</p>
 <div id="what-is-data-manipulation" class="section level2">
-<h2><span class="header-section-number">7.1</span> What is Data Manipulation?</h2>
+<h2><span class="header-section-number">8.1</span> What is Data Manipulation?</h2>
 <p>Data manipulations can be organized around six key verbs:</p>
 <ul>
 <li>arrange: order dataframe by index or variable or sort the data</li>
@@ -296,12 +274,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Here, variable is a column in data set.</p>
 <p>We’ll cover how to perform above operations on a dataset using Pandas.</p>
 <div id="filter" class="section level3">
-<h3><span class="header-section-number">7.1.1</span> Filter</h3>
+<h3><span class="header-section-number">8.1.1</span> Filter</h3>
 <p>We can filter data to get a set of rows from complete dataset. It is similar to <code>WHERE</code> clause in SQL.</p>
 </div>
 </div>
 <div id="doing-same-stuff-using-r" class="section level2">
-<h2><span class="header-section-number">7.2</span> Doing same stuff using R</h2>
+<h2><span class="header-section-number">8.2</span> Doing same stuff using R</h2>
 <p>R is also an excellent programming language for data manipulation. <code>dplyr</code> is a package in R that can be used to perform above operations.</p>
 <p>An excellent article by Ben, <a href="https://teachingr.com/content/the-5-verbs-of-dplyr/the-5-verbs-of-dplyr-article.html#the_power_of_combining_verbs">The 5 verbs of dplyr</a>, can provide you more details on this.</p>
 <p>Another article that compares R and Python can be found <a href="https://gist.github.com/conormm/fd8b1980c28dd21cfaf6975c86c74d07">here</a>.</p>
@@ -316,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="python.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="logistic-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="plotting-in-bookdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -348,7 +326,7 @@ gitbook.start({
 },
 "edit": {
 "link": "https://github.com/iyadavvaibhav/vybook/edit/master/data_science/data_wrangling.md",
-"text": "Edit"
+"text": "View MarkDown"
 },
 "history": {
 "link": null,
