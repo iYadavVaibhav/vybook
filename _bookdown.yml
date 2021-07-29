@@ -17,13 +17,14 @@ rmd_files: [
   "data_science/statistics.md",
   "data_science/statistics_advanced.md",
 
+  "data_science/data_wrangling.md",
+  
   "data_science/logistic_regression.md",
 
   "data_science/blockchain.md",
 
   "data_science/numpy.md",
   "data_science/python.md",
-  "data_science/data_wrangling.md",
   
   "data_science/ds_exercise.rmd",
   ] # optional, if not then all are picked

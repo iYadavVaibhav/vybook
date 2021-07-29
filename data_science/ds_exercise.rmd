@@ -12,7 +12,7 @@ import pandas as pd
 import plotly.offline as py
 import plotly.graph_objects as go
 
-df = pd.read_csv('https://storage.googleapis.com/kagglesdsdata/datasets%2F792338%2F1360531%2Fmerchant_txns_dummy.csv?GoogleAccessId=gcp-kaggle-com@kaggle-161607.iam.gserviceaccount.com&Expires=1597245897&Signature=dmZ2o1Cpzcx9DRyG3kB4ancveOjtKBeQ0JstJpRRMJYpmjXgvTlNcm9YhLCRE31LULjFV2Ex8JzN%2BRUgpkpbNFI8e3QWvaWzCNxi9ODhjkk0q2ifZjC320oipEV9VSIvRmLirfkdrNC5SGS0T4K5rcKP%2Bu1qMOh33Jwf1CcbV17x%2B0N2EE7h1aRcflYQEDhlp8GWhwGSkcUcEAsr0nLL%2Fbhbr3hXJWqMemGtvpkmqxfrualNB%2Fpd95RmxbAVebmIOni8lXlfYYIv4Sawpdf9CEgwW1jrPuhKJJcrLPgFdjQqlHXmGUBrwSlLjBnbzzxdnN3byzerXy4pc6ZNm646Cg%3D%3D')
+df = pd.read_csv('https://raw.githubusercontent.com/iYadavVaibhav/datasets/master/merchant_txns_dummy.csv')
 df.head()
 
 # Helper function to transform regular data to sankey format

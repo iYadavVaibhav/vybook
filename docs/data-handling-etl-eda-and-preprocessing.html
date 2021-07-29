@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Logistic Regression | The VY Notebook</title>
+  <title>4 Data Handling - ETL, EDA, and Preprocessing | The VY Notebook</title>
   <meta name="description" content="This book has notes and understandings of articles and lectures taken by Vaibhav Yadav. These articles/chapters can be hard to understand as they are not written for explaining any topic but are for dumping the notes to refer back. if you have any suggestions, please email author at iYadavVaibhav [at] gmail [dot] com." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Logistic Regression | The VY Notebook" />
+  <meta property="og:title" content="4 Data Handling - ETL, EDA, and Preprocessing | The VY Notebook" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Logistic Regression | The VY Notebook" />
+  <meta name="twitter:title" content="4 Data Handling - ETL, EDA, and Preprocessing | The VY Notebook" />
   
   <meta name="twitter:description" content="This book has notes and understandings of articles and lectures taken by Vaibhav Yadav. These articles/chapters can be hard to understand as they are not written for explaining any topic but are for dumping the notes to refer back. if you have any suggestions, please email author at iYadavVaibhav [at] gmail [dot] com." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-handling-etl-eda-and-preprocessing.html"/>
-<link rel="next" href="blockchain.html"/>
+<link rel="prev" href="advance-statistics.html"/>
+<link rel="next" href="logistic-regression.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -264,67 +264,143 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="logistic-regression" class="section level1">
-<h1><span class="header-section-number">5</span> Logistic Regression</h1>
-<p>Logistic Regression is mainly used when we have to work on probability. It outputs values between 0 and 1. So 0.5 is cutoff point and anything below 0.5 goes to class 0 and rest to class 1.</p>
-<p>Logistic is also called <strong>Sigmod</strong>. Shown in function below.</p>
-<p><span class="math display">\[
-\phi (z) = \frac{1}{1 + e^{-z}}
-\]</span></p>
-<p>this always outputs b/w 0 and 1.</p>
-<div id="difference-between-logistic-and-linear-equations" class="section level3">
-<h3><span class="header-section-number">5.0.1</span> Difference between logistic and linear equations</h3>
-<p><strong>linear model:</strong> $ y = b_0 + b_1x $</p>
-<p>where as logistic is shown in equation below (also same as <span class="math inline">\(\phi (z)\)</span> eq above) :</p>
-<p><span class="math display">\[
-p = \frac{1}{1 + e^{-(b_0 + b_1 x)}}
-\]</span></p>
+<div id="data-handling---etl-eda-and-preprocessing" class="section level1">
+<h1><span class="header-section-number">4</span> Data Handling - ETL, EDA, and Preprocessing</h1>
+<p>Data handling includes reading, understanding, cleaning, transforming, pre-processing and loading data.</p>
+<p><strong>How to do EDA?</strong></p>
+<p>When doing data analysis EDA is step 1. EDA is done to understand your data as much as possible. It make yor familiar with data distribution, data variables and relation of variables. This guide is like a pseudo-code for doing EDA. So let’s get started with..</p>
+<p><strong>What is Exploratory Data Analysis?</strong></p>
+<p>It is the very first step in analysis of the dataset. It is the step to prepare data before applying any model.</p>
+<p>But before EDA, one should spend time in really <strong>understanding the problem</strong>, as in why one needs to do EDA. Once you are clear with the problem statement you can relate the data to solution while doing EDA.</p>
+<p>Find the <strong>key variable</strong> that is required to solve the problem. For e.g., in titanic data set it is ‘survived’. In house price data set it is ‘Sales Price’. Then begin with univariate analysis on thsi data variable.</p>
+<p>Find relation of key variable with other variables, this is bivariate analysis.</p>
+<p>Once, this is done, try to handle outliers and missing values.</p>
+<p>It can include many steps as follow:</p>
+<div id="analyzing-dataset---data-understanding" class="section level2">
+<h2><span class="header-section-number">4.1</span> Analyzing Dataset - Data Understanding</h2>
+<p>Look at the metadata of the variables. What variables are available. what information do they hold. what data type they have. brief stats around those data variables. We can use following commands:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1">df.head()</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">df.info()</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">df.descibe()</a></code></pre></div>
+<p><strong>Analyze key component</strong></p>
+<p>In this section, use statistics and visualization to analyze one (or more) of the variable from the data set. For eg, sales price. Use <code>df['col'].describe()</code> to see stats output.</p>
+<p>Find <strong>distribution</strong> of the key component by plotting a <code>distplot()</code> or histogram. Here, we can see if it is normally distributed or skewed.</p>
+<p><strong>Analyze relation of Key component with other Variables</strong></p>
+<p>We now analyze key component variable with respect to other numerical variables availabe in the dataset. To do this we can make <code>scatterplot()</code> between two different variables. This will show us the relation between them. Linear relation or not. Positive or negative.. etc.</p>
+<p>To analyze categorical variables use <code>boxplot()</code>.</p>
+<p><strong>Finding Correlation</strong></p>
+<p>Use <code>.corr()</code> to find correlation between all variables. THen use <code>heatmap()</code> to plot the correlations. Find which varables have strong correlation.</p>
+<p>Find fields of interest, then make a zoomed heatmap to further analyze variables or remove variables which are not of use.</p>
+<p>Once we ahve found variables that have good relation with key variable we can create a <code>pairplot()</code> of the columns of interest to compare how they relate with each other.</p>
+<p>Now that we have found data variables that make sense and how they are related, we can think about further cleaning the data, like handling missing values and outliers.</p>
 </div>
-<div id="model-evaluation" class="section level3">
-<h3><span class="header-section-number">5.0.2</span> Model Evaluation</h3>
-<p>Use <strong>confusion matrix</strong> to evaluate classification model.</p>
-<p>Classifiaction model is when we classify our predisctions against test data.</p>
-<p>Confusion matrix puts predictions and tests together to compare.</p>
-<table>
-<thead>
-<tr class="header">
-<th>n=165</th>
-<th>Predicted=NO</th>
-<th>Predicted=YES</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Actual: NO</td>
-<td>TN = 50</td>
-<td>FP = 10</td>
-<td>60</td>
-</tr>
-<tr class="even">
-<td>Actual: YES</td>
-<td>FN = 5</td>
-<td>TP = 100</td>
-<td>105</td>
-</tr>
-<tr class="odd">
-<td>55</td>
-<td>110</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>False Positive FP is Type 1 error
-FN is Type 2 error</p>
+<div id="data-preprocessing" class="section level2">
+<h2><span class="header-section-number">4.2</span> Data Preprocessing</h2>
+<p>Steps reuquired to clean and build data ready for machine learning. Sample dataset:</p>
+<div class="figure">
+<img src="../images/sample_dataset.png" alt="sample dataset" />
+<p class="caption">sample dataset</p>
 </div>
-<div id="accuracy" class="section level3">
-<h3><span class="header-section-number">5.0.3</span> Accuracy:</h3>
-<p><strong>Correct:</strong> (TP + TN) / total = 150/165 = 0.91</p>
-<p>Our model is 91% correct,</p>
-<p><strong>Wrong:</strong> (FP + FN)/100 = 15/165 = 0.09</p>
-<p>Our mode is 9% wrong.</p>
+<div id="missing-data" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Missing Data</h3>
+<p>We can use <code>isnull()</code> to find missing values. Find total number of missing values and % of missing values for each column.</p>
+<p>Consider how much impact missing values will have on analysis. If the columns having missing values are not the ones of our interest, drop the columns. If total missing values are very small compred to number of records, simply you may drop one or few rows.</p>
+<ul>
+<li>you can remove if you don’t have crucial info and have lot of data</li>
+<li>replace by mean of column</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> Imputer</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">imputer <span class="op">=</span> Imputer(missing_values <span class="op">=</span> <span class="st">&#39;NaN&#39;</span>, strategy <span class="op">=</span> <span class="st">&#39;mean&#39;</span>, axis<span class="op">=</span><span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co"># Imputer is class, imputer is obj</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">imputer <span class="op">=</span> imputer.fit(df[<span class="st">&#39;age&#39;</span>,<span class="st">&#39;salary&#39;</span>]) </a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co"># we pass matrix from df, it is two columsn with numbers. </span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co"># we get fitted object imputer, fitted to our matrix</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">df[<span class="st">&#39;age&#39;</span>,<span class="st">&#39;salary&#39;</span>] <span class="op">=</span> imputer.transform(df[<span class="st">&#39;age&#39;</span>,<span class="st">&#39;salary&#39;</span>])</a></code></pre></div>
+</div>
+<div id="categorical-variables" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Categorical Variables</h3>
+<p>ML models can only take numbers in mathematical eqns. So encode to numbers. eg, country, boolean (yes/no).</p>
+<p>For comparable and booleans use <code>LabelEncoder</code>, it gives numbers for categories.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> LabelEncoder</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">labelEncoder_y <span class="op">=</span> LabelEncoder()</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">df[<span class="st">&#39;y&#39;</span>] <span class="op">=</span> labelEncoder_y.fit_transform(df[<span class="st">&#39;y&#39;</span>]) </a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co"># fits transforms and returns encoded values, a vector y</span></a></code></pre></div>
+<p>For non-comparable categories, like country, use <code>OneHotEncoder</code>. It makes <code>dummy_variables</code> with each country having its own column.</p>
+<p>Now numbers are comparable so country with 2 will be treated greater than 1, but this doesn;t make sense so we will use dummy_variables. So we have new columns equal to number of categories. so we will have column for each country and it will ahve 0 or 1 depending on its presence. for this we use:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OneHotEncoder</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">oneHotEncoder <span class="op">=</span> OneHotEncoder(categorical_features <span class="op">=</span> [<span class="dv">0</span>]) </a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co"># index of categorical variable</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">df <span class="op">=</span> oneHotEncoder.fit_transform(X).to_array()</a></code></pre></div>
+</div>
+<div id="train-test-validation-split" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> Train Test Validation Split</h3>
+<p>We need to divide the data in to train and test so that our model does not learn the correlation by heart and can fit new data which is slightly different from train. We need to be efficient in making the split so we use library. <code>cross_validation</code> library is used for this.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="im">from</span> sklearn.cross_validation <span class="im">import</span> train_test_split</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co"># X are matrix of observations. y is dependent variable.</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">X_train, X_test, y_train, y_test  <span class="op">=</span> train_test_split(X, y, test_size <span class="op">=</span> <span class="fl">0.2</span>, random_state <span class="op">=</span> <span class="dv">0</span>) </a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co"># random_state is used to get same split everytime.</span></a></code></pre></div>
+</div>
+<div id="feature-scaling" class="section level3">
+<h3><span class="header-section-number">4.2.4</span> Feature Scaling</h3>
+<p>Our observations can be at different scales, eg, age ranges 20-60 and salary ranges 40k-90k. Our ML model depends mostly on euclidean dist,</p>
+<p><span class="math display">\[ P_1 (x_1, y_1) and P_2 (x_2, y_2) \]</span></p>
+<p><span class="math display">\[ dist = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2} \]</span></p>
+<p>ML model computes dist between two rows to use a model. so difference of square can be dominated by var having much range, salary in this case. Hence we need to scale variables. Other ML model which do not depend on eucledian dist like decision trees that will converge fast. ML model will run faster.</p>
+<p>Scaling:</p>
+<p><span class="math display">\[x_{standard} = \frac{x-\mu}{\sigma} \]</span></p>
+<p>mean and std dev</p>
+<p><span class="math display">\[ x_{norm} = \frac{x-min(x)}{max(x)-min(x)} \]</span></p>
+<p>This gives same range and same scale.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">sc_X <span class="op">=</span> StandardScaler()</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">X_train <span class="op">=</span> sc_X.fit_transform(X_train)</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">X_test <span class="op">=</span> sc_X.transform(X_test)</a></code></pre></div>
+<p>Scaling dummy variables depends on the context, if they make significant effect on model then scale them. We loose context when we scale them but may bring better accuracy.</p>
+<p>If any data is not normally distributed then we can take log of that data considering it doesn’t affect much. (this needs improvement in understanding).</p>
+<blockquote>
+<p>ToDo: May include PCA LDA here, in future</p>
+</blockquote>
+</div>
+</div>
+<div id="data-wrangling" class="section level2">
+<h2><span class="header-section-number">4.3</span> Data Wrangling</h2>
+<p><a href="https://pandas.pydata.org/">Pandas</a> is a package in Python that can be used for data manipulation.</p>
+<div id="what-is-data-manipulation" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> What is Data Manipulation?</h3>
+<p>Data manipulations can be organized around six key verbs:</p>
+<ul>
+<li>arrange: order dataframe by index or variable or sort the data</li>
+<li>select: choose a specific variable or set of variables or select columns in data</li>
+<li>filter: subset a dataframe according to condition(s) in a variable(s) or select rows in data</li>
+<li>mutate: transform dataframe by adding new variables or add a calculated column</li>
+<li>group_by: create a grouped dataframe</li>
+<li>summarize: reduce variable to summary variable (e.g. mean)</li>
+</ul>
+<p>Here, variable is a column in data set.</p>
+<p>We’ll cover how to perform above operations on a dataset using Pandas.</p>
+<div id="filter" class="section level4">
+<h4><span class="header-section-number">4.3.1.1</span> Filter</h4>
+<p>We can filter data to get a set of rows from complete dataset. It is similar to <code>WHERE</code> clause in SQL.</p>
+</div>
+</div>
+<div id="doing-same-stuff-using-r" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Doing same stuff using R</h3>
+<p>R is also an excellent programming language for data manipulation. <code>dplyr</code> is a package in R that can be used to perform above operations.</p>
+<p><strong>References:</strong></p>
+<ul>
+<li>An excellent article by Ben, <a href="https://teachingr.com/content/the-5-verbs-of-dplyr/the-5-verbs-of-dplyr-article.html#the_power_of_combining_verbs">The 5 verbs of dplyr</a>, can provide you more details on this.</li>
+<li>Another article that compares R and Python can be found <a href="https://gist.github.com/conormm/fd8b1980c28dd21cfaf6975c86c74d07">here</a>.</li>
+<li><a href="https://pandas.pydata.org/pandas-docs/version/0.23/comparison_with_sql.html">Comparison of Pandas with SQL</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/version/0.23/index.html">Pandas docs</a> excellent details with examples.</li>
+</ul>
 
+</div>
 </div>
 </div>
             </section>
@@ -332,8 +408,8 @@ FN is Type 2 error</p>
           </div>
         </div>
       </div>
-<a href="data-handling-etl-eda-and-preprocessing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="blockchain.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="advance-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="logistic-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -364,7 +440,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/iyadavvaibhav/vybook/edit/master/data_science/logistic_regression.md",
+"link": "https://github.com/iyadavvaibhav/vybook/edit/master/data_science/data_wrangling.md",
 "text": "View MarkDown"
 },
 "history": {
